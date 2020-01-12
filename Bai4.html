@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài04</title>
+    <script>
+        let arr = [
+                    [1,2,3,4],
+                    [5,6,7,8],
+                    [9,10,11,12],
+                    [13,14,15,16]
+            ];
+        let hienMatran = (array) => {
+            let count = 0;
+            for (let i in array){
+                document.write(array[i] + "<br>");
+                count++;
+                if(count == array.length){
+                    document.write("<br>");
+                }
+            }
+        }
+        let cal = (array) => {
+            let result = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                result += array[i][i];
+            }
+            return result;
+        }
+
+        let hienTongduongcheo = () => {
+            alert("Tổng đường chéo chính ma trận vuông là: " + cal(arr));
+        }
+
+    </script>
+</head>
+<body>
+<button id="button1" onclick="hienMatran(arr)">Hiện Ma trận</button>
+<button id="button2" onclick="hienTongduongcheo()">Tổng đường chéo chính</button>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 01</title>
+    <script>
+        function checkPrime(n) {
+            if(n<2){
+                return false;
+            }
+            else{
+                for(let i=2; i<=Math.sqrt(n); i++){
+                    if( n%i === 0 ){
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
+        let n=2;
+        let j="";
+        function getPrime() {
+            let number=document.getElementById("number").value;
+            while (n <= number) {
+                if (checkPrime(n)) {
+                    j += n + " ";
+                }
+                n++;
+            }
+            document.getElementById("result").innerHTML=j;
+        }
+    </script>
+
+</head>
+<body>
+<tr>
+    <td><p>Enter a number</p></td>
+    <td><input type="text" id="number" value=""></td>
+    <td><button onclick="getPrime()">Show</button></td>
+</tr>
+<div id="result"></div>
+
+</body>
+</html>
